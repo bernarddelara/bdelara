@@ -1,0 +1,14 @@
+<isinclude template = "components/modules"/>
+<div class="card">
+   <div class="card-header clearfix">
+       <h2 class="pull-left">${Resource.msg('label.preferences', 'account', null)}</h2><!--name of label inside .properties, location of .properties -->
+   </div>
+   <div class="card-body">
+        <isslot id="account_references_content_bogs" context="global" description = "Content slot show"/>
+       <div>
+           <isloop items="${pdict.account.education}" var="preference"> <!-- location -->
+               <div>${preference.value}</div>
+           </isloop>
+       </div>
+   </div>
+</div>

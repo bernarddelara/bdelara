@@ -1,0 +1,12 @@
+Hello Foo,
+<br/>
+<br/>
+these are the most recent newsletter registration:
+<br/>
+<isloop items="${pdict.registrations}" var="registration">
+    <isprint value="${registration.custom.email}"/><br/>
+</isloop>
+
+<br/>
+Regards,
+SFCC

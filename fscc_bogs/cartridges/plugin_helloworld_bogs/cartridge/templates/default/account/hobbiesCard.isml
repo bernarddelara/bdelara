@@ -1,0 +1,13 @@
+<div class="card">
+    <div class="card-header clearfix">
+        <h2 class="pull-left">${Resource.msg('label.hobbies','account',null)}</h2>
+        <!--- <a href="${URLUtils.url('Account-EditProfile')}" class="pull-right" aria-label="${Resource.msg('label.hobbies.edit','account',null)}">${Resource.msg('link.edit','account',null)}</a> --->
+        <!--
+        <isif condition="${pdict.account.preferredAddress}">
+            <a href="${URLUtils.url('Address-List')}" class="pull-right" aria-label="${Resource.msg('label.addressbook.viewaddress','account',null)}">${Resource.msg('link.view','account',null)}</a>
+        </isif> -->
+    </div>
+   <div class="card-footer card-footer-border text-center">
+        <a href="${URLUtils.url('hobbiesJS-Addhobby')}" class="card-link" aria-label="${Resource.msg('label.hobbies.addnewhobby','account',null)}">${Resource.msg('link.addnew','account',null)}</a>
+    </div>
+</div>

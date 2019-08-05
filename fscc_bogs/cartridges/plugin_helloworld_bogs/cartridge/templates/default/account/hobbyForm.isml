@@ -1,0 +1,68 @@
+<form action="${URLUtils.url('hobbiesJS-SaveHobby')}" method="POST" encoding="off">
+    <!---class="address-form" <isprint value="${pdict.hobbiesForm.attributes}"/> --->
+    
+    <!--- Hobby Title --->
+    <div class="form-group
+        ${pdict.hobbiesForm.hobbiesId.mandatory === true ? 'required' : ''}">
+        <label class="form-control-label" for="addressId">
+            <isprint value="${pdict.hobbiesForm.hobbiesId.label}" encoding="htmlcontent" />
+        </label>
+        <input type="text" class="form-control" id="addressId"
+            <isprint value="${pdict.hobbiesForm.hobbiesId.attributes}" encoding="off" />>
+        <div class="invalid-feedback"></div>
+    </div>
+
+    <!--- Hobby Description --->
+    <div class="row">
+        <!--- First Name --->
+        <div class="col-6">
+            <div class="form-group
+                ${pdict.hobbiesForm.hobbiesDesc.mandatory === true ? 'required' : ''}">
+                <label class="form-control-label" for="firstName">
+
+                <isprint value="${pdict.hobbiesForm.hobbiesDesc.label}" encoding="htmlcontent" />
+                </label>
+                <input type="text" class="form-control" id="firstName"
+                    <isprint value="${pdict.hobbiesForm.hobbiesDesc.attributes}" encoding="off" />
+                    autocomplete="given-name">
+                <div class="invalid-feedback"></div>
+            </div>
+        </div>
+    </div>
+    <!--- Hobby Created Date --->
+    <div class="form-group
+        ${pdict.hobbiesForm.hobbiesDateCreated.mandatory === true ? 'required' : ''}">
+        <label class="form-control-label" for="address1">
+            <isprint value="${pdict.hobbiesForm.hobbiesDateCreated.label}" encoding="htmlcontent" />
+        </label>
+
+        <input type="text" class="form-control" id="address1"
+            <isprint value="${pdict.hobbiesForm.hobbiesDateCreated.attributes}" encoding="off" />
+            autocomplete="address-line1">
+        <div class="invalid-feedback"></div>
+    </div>
+
+    <!--- Cancel and Save Buttons --->
+    <!---<div class="row">
+        <div class="col-6">
+            <a href="${URLUtils.url('hobbiesJS-List')}" class="btn btn-block btn-outline-primary">${Resource.msg('button.cancel','account',null)}</a>
+        </div>
+        <div class="col-6">
+
+        <a href="${URLUtils.url('hobbiesJS-SaveHobby')}" class="btn btn-block btn-outline-primary">${Resource.msg('button.save','account',null)}</a>
+        </div>
+    </div> --->
+
+    <!--- Cancel and Save Buttons --->
+    <div class="row">
+    <div class="col-6">
+    <a href="${URLUtils.url('hobbiesJS-List')}" class="btn btn-block btn-outline-primary">${Resource.msg('button.cancel','account',null)}</a>
+    </div>
+    <div class="col-6">
+
+    <!--- a href="${URLUtils.url('Address-List')}" class="btn btn-block btn-outline-primary">${Resource.msg('button.cancel','account',null)}</a --->
+    <button type="submit" name="save" class="btn btn-save btn-block btn-primary">${Resource.msg('button.save','account',null)}</button>
+    </div>
+    </div>
+
+</form>

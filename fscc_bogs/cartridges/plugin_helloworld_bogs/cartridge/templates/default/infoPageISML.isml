@@ -1,0 +1,108 @@
+<isdecorate template="common/layout/page">
+
+        <style>
+            .header{
+                font-family: arial, helventica, sans-serif;
+	            font-size:10px;
+            }
+
+            body{
+	            	font-family: arial, helventica, sans-serif;
+	            	font-size:12px;
+                    font-weight:normal;
+                }
+            
+            .image{
+                margin-top: 20px;
+                margin-left: 100px;
+            }
+            
+            .cStatus{
+                margin-left: 100px;
+            }
+
+            .gender{
+                margin-left: 100px;
+            }
+
+            .name{
+                position: absolute;
+                top: 140px;
+                margin-left: 560px;
+            }
+
+            .bday{
+                position: absolute;
+                top: 200px;
+                margin-left: 560px;
+            }
+
+            .educ{
+                position: absolute;
+                top: 270px;
+                margin-left: 560px;
+            }
+
+            .aboutme{
+                margin-left: 100px;
+                width: 50%;
+                font-size:14px;
+            }
+        </style>
+
+
+   
+        <div class="header">${Resource.msgf('hello.world','en_US',null,'Bernard')}</div>
+      
+        
+            <div class="image">
+                <img src="https://charactermedia.com/_site/wp-content/uploads/2019/01/jokoy.png" style="width:200px;height:200px;">
+            </div>
+        
+            <br>
+            <br>
+            <div class="cStatus">
+                <label for="ctatus">${Resource.msgf('status.label','en_US',null)}</label><br/>
+                <select name="cStatus">
+                    <option value="single">${Resource.msgf('status.single','en_US',null)}</option>
+                    <option value="married">${Resource.msgf('status.married','en_US',null)}</option>
+                </select>
+            </div>
+            <br>
+            <div class="gender">
+                <label for="gender">${Resource.msgf('gender.label','en_US',null)}</label><br/>
+                <input type="radio" name="gender" value="male" checked>${Resource.msgf('gender.male','en_US',null)}<br/>
+                <input type="radio" name="gender" value="female">${Resource.msgf('gender.female','en_US',null)}<br/><br/>
+            </div>
+        
+            <div class="name">
+                <label for="name">${Resource.msgf('name.label','en_US',null)}</label><br/>
+                <input type="text" name="name" value="Bernard De Lara"><br/><br/>
+            </div>
+        
+
+            <div class="bday">
+                <label for="bday">${Resource.msgf('birthday.label','en_US',null)}</label><br/>
+                <input type="date" id="bday" name="bday" value="1928-09-28"><br/><br/>
+            </div>
+
+            <div class="educ">
+                <label for="educ">${Resource.msgf('education.label','en_US',null)}</label><br/>
+                <input type="checkbox" name="educ" value="elementary" checked>${Resource.msgf('education.elementary','en_US',null)}<br/>
+                <input type="checkbox" name="educ" value="highschool" checked>${Resource.msgf('education.highschool','en_US',null)}<br/>
+                <input type="checkbox" name="educ" value="college" checked>${Resource.msgf('education.college','en_US',null)}<br/>
+                <input type="checkbox" name="educ" value="ma">${Resource.msgf('education.masters','en_US',null)}<br/>
+                <input type="checkbox" name="educ" value="phd">${Resource.msgf('education.phd','en_US',null)}<br/><br/>
+            </div>
+                
+        <div class="aboutme">
+            <label for="aboutme"><b>${Resource.msgf('aboutme.label','en_US',null)}</b></label><br/>
+            <isloop items="${pdict.aboutme}" var="aboutme">
+                <isprint value="${aboutme.description}"/>
+            </isloop>
+        </div>
+        </br>
+
+</isdecorate>
+
+

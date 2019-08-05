@@ -1,0 +1,24 @@
+<div class="row justify-content-center">
+    <div class="col-sm-6">
+        <isinclude template="account/profileCard"/>
+
+        <isif condition="${!pdict.account.isExternallyAuthenticated}">
+            <isinclude template="account/passwordCard"/>
+        </isif>
+    </div>
+
+    <div class="col-sm-6">
+        <isinclude template="account/addressBookCard"/>
+
+        <isif condition="${pdict.account.orderHistory}">
+            <isset name="order" value="${pdict.account.orderHistory}" scope="page"/>
+            <isinclude template="account/order/orderHistoryCard"/>
+        </isif>
+
+        <isinclude template="account/paymentCard"/>
+
+        <isinclude template="account/hobbiesCard"/>
+
+        <isinclude template="account/edCardBogs"/> <!-- isml-->
+    </div>
+</div>

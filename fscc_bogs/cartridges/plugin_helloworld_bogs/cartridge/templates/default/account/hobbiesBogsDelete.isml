@@ -1,0 +1,29 @@
+<isdecorate template="common/layout/page"> <!--- this is the delete confirmation page --->
+<div class="container">
+    <!---Breadcrumbs--->
+        <isinclude template="components/breadcrumbs/pageBreadcrumbs"/>
+    <!-- Content here -->
+     <h2>${Resource.msg('label.input.hobby.delete','account',null)}</h2>
+
+   <form action="${URLUtils.url('hobbiesJS-DeleteHobby')}" method="POST"  encoding="off" >
+
+        <p>${Resource.msg('label.input.delete.confirmation','account',null)} </p>
+        <p><b>Code: ${pdict.code}</b></p>
+        <input type="hidden" id="code"
+            <isprint value="${pdict.hobbyForm.code.attributes}" encoding="off" />
+        />
+        <input type="hidden" name="${pdict.csrf.tokenName}" value="${pdict.csrf.token}"/>
+        <div class="row">
+            <div class="col">
+                <a href="${URLUtils.url('hobbiesJS-List')}" class="btn btn-block btn-outline-primary">${Resource.msg('button.cancel','account',null)}</a>
+            </div>
+
+            <div class="col">
+                <button type="submit" name="save" class="btn btn-save btn-block btn-primary">${Resource.msg('button.delete','account',null)}</button>
+            </div>
+        </div>
+    </form>
+
+</div>
+
+</isdecorate>

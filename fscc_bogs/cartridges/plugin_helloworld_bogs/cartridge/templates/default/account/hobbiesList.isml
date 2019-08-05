@@ -1,0 +1,55 @@
+<isdecorate template="common/layout/page"> <!--- this is the list of hobbies page DELETE EDIT --->
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addJs('/js/addressBook.js');
+        assets.addCss('/css/account/addressBook.css');
+    </isscript>
+    <!---<isinclude template="account/deleteAddressModal"/> --->
+
+    <div class="hero slant-down account-image">
+        <h1 class="page-title">${Resource.msg('label.hobbies','account',null)}</h1>
+    </div>
+
+    <div class="container">
+    <!---Breadcrumbs--->
+    <isinclude template="components/breadcrumbs/pageBreadcrumbs"/>
+    <div class="row">
+        <div class="col-lg-6 col-sm-6 push-sm-6 push-lg-6">
+            <!-- Content here -->
+             <h2>${Resource.msg('label.input.hobby.index','account',null)}</h2>
+        </div>
+        <div class="col-lg-6 col-sm-6 push-sm-6 push-lg-6">
+            <a href="${URLUtils.url('hobbiesJS-Addhobby')}" type="button" class="btn btn-primary">Create New</a>
+        </div>
+    </div>
+    <div class="row">
+        <table class="table table-sm">
+        <thead>
+            <tr>
+            <th scope="col">Code</th>
+            <th scope="col">Description</th>
+            <th scope="col">Date Created</th>
+            <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <isloop items="${pdict.hobby}" var="hobby">
+                <tr>
+                    <th scope="row">${hobby.code}</th>
+                    <td>${hobby.description}</td>
+                    <td>${hobby.date}</td>
+                    <td><a href="${URLUtils.url('hobbiesJS-EditHobby')}?code=${hobby.code}&description=${hobby.description}&date=${hobby.date}" type="button" class="btn btn-outline-primary" style="width:106px;">${Resource.msg('label.button.edit','account',null)}</a>
+                        <a href="${URLUtils.url('hobbiesJS-ConfirmDelete')}?code=${hobby.code}" type="button" class="btn btn-outline-primary" style="width:106px;">${Resource.msg('button.delete','account',null)}</a></td>
+                </tr>
+            </isloop>
+        </tbody>
+        <div id="listingTable">
+            <a href="javascript:prevPage()" id="btn_prev">Prev</a>
+            <a href="javascript:nextPage()" id="btn_next">Next</a>
+            page: ${pdict.page} <span id="page"></span>
+        </div>
+
+        </table>
+    </div>
+    </div>
+</isdecorate>

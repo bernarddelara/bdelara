@@ -1,0 +1,3 @@
+<isdecorate template="common/layout/page">
+   <h1>${Resource.msgf('hello.world','newsletter',null,'Bernard')}</h1>
+</isdecorate>
